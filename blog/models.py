@@ -1,12 +1,13 @@
-from django.contrib import admin
 from django.db import models
-from blog.models import Person
+
 
 # Create your models here.
 
-@admin.register(Person)
 class Person(models.Model):
-    pass
+    first_name = models.CharField(max_length=50)
+    last_name = models.CharField(max_length=100)
+    age = models.IntegerField(max_length=3, null=True)
+    email = models.EmailField(max_length=100, blank=True, null=True)
 
     def __str__(self):
-        return f"{self.first_name} {self.last_name} ({self.id})"
+        return f"{self.first_name} {self.last_name}, {self.age} ({self.id})"
