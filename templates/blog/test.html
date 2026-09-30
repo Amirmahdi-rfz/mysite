@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test</title>
+</head>
+<body>
+    {{persons}}
+        {% for person in persons %}
+        <h2>{{person.first_name}} {{person.last_name}}, {{person.age}}</h2>
+        <p>{{person.email}}</p>
+        <p>{{person.created_date}}</p>
+        {% endfor %}
+</body>
+</html>
